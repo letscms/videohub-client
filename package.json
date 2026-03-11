@@ -1,0 +1,22 @@
+{
+  "name": "videohub-client-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "dist/videohub-client.umd.min.js",
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "livekit-client": "^2.17.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^29.0.0",
+    "@rollup/plugin-node-resolve": "^16.0.3",
+    "@rollup/plugin-terser": "^0.1.0",
+    "rollup": "^4.59.0"
+  }
+}
