@@ -375,3 +375,147 @@ With a simple API and flexible event system, you can quickly implement:
 * webinars
 * screen sharing
 * live collaboration
+
+---
+
+# Real-Time Messaging (RTM)
+
+VideoHub provides built-in real-time messaging features including:
+
+* Text messages
+* Stickers
+* GIFs / Animated Images
+* Emoji Reactions
+* File Attachments
+* Call Invitations
+
+---
+
+# Send Text Message
+
+```javascript
+hub.chat.send(
+  roomId,
+  "Hello VideoHub 👋"
+);
+```
+
+---
+
+# Receive Messages
+
+```javascript
+hub.rtm.on(
+  hub.rtm.EVENTS.CHAT_MESSAGE,
+  payload => {
+
+    console.log(
+      payload.sender_id,
+      payload.message
+    );
+
+  }
+);
+```
+
+---
+
+# Send Sticker
+
+```javascript
+hub.chat.sendRichMessage(
+  roomId,
+  {
+    
+    type: "sticker",
+    sticker: stickerUrl
+                  
+  }
+);
+```
+
+---
+
+# Receive 
+
+```javascript
+hub.rtm.on()
+```
+
+---
+
+# Send GIF / Animated Image
+
+```javascript
+{
+  type: "gif",
+  url: gif
+}
+```
+
+---
+
+# Send Attachment Message
+
+```javascript
+hub.attachment.send(
+  roomId,
+  [
+    {
+      file_id:
+        attachment.attachment_id,
+
+      name:
+        attachment.file_name,
+
+      size:
+        attachment.file_size,
+
+      mime_type:
+        attachment.mime_type,
+
+      url:
+        attachment.file_url
+    }
+  ]
+);
+```
+
+---
+
+# Download Attachment
+
+---
+
+# Call Invitation
+
+```javascript
+hub.call.invite(
+  targetUserID,
+  roomID,
+  type
+)
+```
+
+---
+
+# RTM Events 
+
+| Event                                 | Description                           |
+| ------------------------------------- | ------------------------------------- |
+| CHAT_MESSAGE                          | Text, sticker, GIF, reaction message  |
+| CHAT_DELETE                           | Message deleted                       |
+| TYPING_START                          | User started typing                   |
+| TYPING_STOP                           | User stopped typing                   |
+| USER_JOINED                           | User joined room                      |
+| USER_LEFT                             | User left room                        |
+| PRESENCE_UPDATE                       | Presence status update                |
+| ROOM_STATE_SYNC                       | Room state synchronization            |
+
+---
+
+## Documentation
+
+Full API documentation is available at:
+
+https://docs.videohub.dev
