@@ -44,7 +44,7 @@ Download the SDK and include it:
 
 ```javascript
 const hub = new VideoHub({
-  ws: "wss://your-stream-server"
+  ws: rtc
 });
 ```
 
@@ -52,7 +52,7 @@ const hub = new VideoHub({
 
 | Option | Description          |
 | ------ | -------------------- |
-| ws     | WebSocket server URL |
+| ws     | rtc server           |
 
 ---
 
